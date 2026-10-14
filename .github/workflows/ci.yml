@@ -1,0 +1,23 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Installer les versions figées
+        run: pip install -r requirements.lock
+      - name: Reproduire
+        run: make reproduce
+      - name: Tester
+        run: make test
+      - name: Vérifier la reproductibilité
+        run: |
+          cp metrics.json /tmp/first.json
+          make metrics
+          diff /tmp/first.json metrics.json

@@ -1,0 +1,23 @@
+# Une seule graine pour tout le projet : la coupe, la validation croisée, les modèles.
+seed: 20261015
+
+# La coupe figée (séance 1) : 60 % entraînement, 20 % validation, 20 % test, stratifiée sur la cible.
+split:
+  train: 0.6
+  validation: 0.2
+  test: 0.2
+
+# Les coûts d'erreur (séance 4) : des hypothèses métier, écrites ici et justifiées dans DECISIONS.md.
+# Un bon client refusé coûte la marge perdue ; un défaut accepté coûte la perte attendue.
+costs:
+  c_fp: 600     # euros, refuser à tort un client qui aurait remboursé
+  c_fn: 4500    # euros, accepter un client qui fait défaut
+
+# Le seuil de décision : choisi sur le pli de validation par make reproduce (argmin du coût attendu),
+# puis figé ici. Il n'est pas 0,5 : avec ces coûts, le seuil d'indifférence vaut c_fp / (c_fp + c_fn).
+threshold: 0.1176
+
+# Les colonnes qui n'entrent jamais dans un modèle (garde-fous, séance 1).
+excluded_features:
+  - ID
+  - SEX
