@@ -1,0 +1,13 @@
+# Les bibliothèques du projet, sans versions : requirements.lock fixe les versions exactes (pip freeze).
+# Pour régénérer le lock : pip install -r requirements.in && pip freeze > requirements.lock
+numpy
+pandas
+scikit-learn
+xgboost
+pyyaml
+xlrd
+requests
+pytest
+matplotlib
+nbformat
+# Facultatif, hors lock (lourd) : pip install jupyter streamlit

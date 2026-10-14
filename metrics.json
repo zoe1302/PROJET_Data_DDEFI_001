@@ -1,0 +1,117 @@
+{
+  "pli": "validation",
+  "graine": 20261015,
+  "couts": {
+    "c_fp": 600,
+    "c_fn": 4500
+  },
+  "modeles": {
+    "naive": {
+      "n": 6000,
+      "taux_defaut": 0.2212,
+      "auc": 0.5,
+      "log_loss": 0.5284,
+      "brier": 0.1723,
+      "seuil": 0.1176,
+      "matrice": {
+        "VP": 1327,
+        "FP": 4673,
+        "FN": 0,
+        "VN": 0
+      },
+      "precision": 0.2212,
+      "rappel": 1.0,
+      "cout_attendu_par_dossier": 467.3,
+      "cout_attendu_total": 2803800.0,
+      "calibration": [
+        {
+          "tranche": "(0.2, 0.3]",
+          "n": 6000,
+          "p_moyen": 0.2212,
+          "taux_observe": 0.2212
+        }
+      ]
+    },
+    "baseline": {
+      "n": 6000,
+      "taux_defaut": 0.2212,
+      "auc": 0.7232,
+      "log_loss": 0.4666,
+      "brier": 0.146,
+      "seuil": 0.1176,
+      "matrice": {
+        "VP": 1159,
+        "FP": 3426,
+        "FN": 168,
+        "VN": 1247
+      },
+      "precision": 0.2528,
+      "rappel": 0.8734,
+      "cout_attendu_par_dossier": 468.6,
+      "cout_attendu_total": 2811600.0,
+      "calibration": [
+        {
+          "tranche": "(-0.001, 0.1]",
+          "n": 1049,
+          "p_moyen": 0.0623,
+          "taux_observe": 0.1163
+        },
+        {
+          "tranche": "(0.1, 0.2]",
+          "n": 2060,
+          "p_moyen": 0.1498,
+          "taux_observe": 0.1248
+        },
+        {
+          "tranche": "(0.2, 0.3]",
+          "n": 1811,
+          "p_moyen": 0.2366,
+          "taux_observe": 0.1872
+        },
+        {
+          "tranche": "(0.3, 0.4]",
+          "n": 287,
+          "p_moyen": 0.351,
+          "taux_observe": 0.3763
+        },
+        {
+          "tranche": "(0.4, 0.5]",
+          "n": 381,
+          "p_moyen": 0.4475,
+          "taux_observe": 0.5486
+        },
+        {
+          "tranche": "(0.5, 0.6]",
+          "n": 234,
+          "p_moyen": 0.5445,
+          "taux_observe": 0.7094
+        },
+        {
+          "tranche": "(0.6, 0.7]",
+          "n": 101,
+          "p_moyen": 0.6301,
+          "taux_observe": 0.7327
+        },
+        {
+          "tranche": "(0.7, 0.8]",
+          "n": 39,
+          "p_moyen": 0.7506,
+          "taux_observe": 0.6923
+        },
+        {
+          "tranche": "(0.8, 0.9]",
+          "n": 27,
+          "p_moyen": 0.8348,
+          "taux_observe": 0.6296
+        },
+        {
+          "tranche": "(0.9, 1.0]",
+          "n": 11,
+          "p_moyen": 0.9601,
+          "taux_observe": 0.7273
+        }
+      ]
+    }
+  },
+  "seuil_optimal_validation": 0.045
+}

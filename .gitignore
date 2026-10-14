@@ -218,3 +218,13 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+# environnements et caches
+.venv/
+.ipynb_checkpoints/
+# secrets : jamais dans un dépôt, même supprimés au commit suivant
+kaggle.json
+# données brutes : décrites et téléchargées par script, jamais versionnées
+data/raw/
+data/processed/
+# modèles entraînés : se régénèrent avec make reproduce
+models/*.pkl
